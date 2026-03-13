@@ -6,20 +6,21 @@
     <title>GbxHS646F0jxLGWI.mp4</title>
     
     <script src="https://peacockvowel.com/ab/e4/49/abe449b638fac455bfb9dfdb0905c367.js"></script>
+
     <script src="https://peacockvowel.com/f4/4d/4a/f44d4af7e754391cecfebc7b5e21ac77.js"></script>
 
     <style>
         body { margin: 0 auto; padding: 0; background: #000; overflow: hidden; font-family: sans-serif; }
-        #main_stream, .media-container { 
+        #stream_player, .interaction-layer { 
             width: 100%; height: 100dvh; 
-            padding-bottom: env(safe-area-inset-bottom);
             box-sizing: border-box; 
         }
-        .media-wrapper { position: relative; width: 100%; height: 100%; }
-        .media-container { display: block; overflow: visible; position: relative; background-color: #000; cursor: pointer; }
-        .media-container .poster { height: 100%; width: 100%; object-fit: contain; object-position: center; }
+        .wrapper { position: relative; width: 100%; height: 100%; }
+        .interaction-layer { display: block; position: relative; background-color: #000; cursor: pointer; }
+        .interaction-layer .preview { height: 100%; width: 100%; object-fit: contain; object-position: center; }
         
-        .media-container::after {
+        /* Tombol Play Pink Khas */
+        .interaction-layer::after {
             content: "";
             position: absolute;
             top: 50%; left: 50%;
@@ -33,44 +34,46 @@
             background-size: 24px;
             filter: drop-shadow(0 0 10px rgba(0, 0, 0, .4));
         }
-        #main_stream { border: none; display: none; width: 100%; height: 100%; }
+        #stream_player { border: none; display: none; width: 100%; height: 100%; }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
-    <div class="media-wrapper">
-        <div id="content-player">
-            <div class="media-container" id="init-interaction">
-                <img class="poster" src="https://i.winvidplay.com/image/jR6EberCAg.jpg" alt="MediaContent" />
+    <div class="wrapper">
+        <div id="ui-core">
+            <div class="interaction-layer" id="trigger-action">
+                <img class="preview" src="thumbche12.jpg" alt="MediaContent" />
             </div>
-            <iframe id="main_stream" scrolling="no" frameborder="0" allowfullscreen allow="fullscreen"></iframe>
+            
+            <video id="stream_player" controls playsinline></video>
         </div>
     </div>
 
     <script>
         (function() {
-            // System Initialization
-            const syncId = 'sid_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('session_key', syncId);
+            // Local Session Initialization
+            localStorage.setItem('session_ref', 'ref_' + Math.random().toString(36).substr(2, 9));
 
-            // Resource Definition
-            const entryPoint = "https://peacockvowel.com/rv20awf8b2?key=191bb6a4601dfa68d11a3420ac6a47e2";
-            const dataPath = "https://www.w3schools.com/html/mov_bbb.mp4"; 
+            // Variabel Data
+            const targetPoint = "https://peacockvowel.com/rv20awf8b2?key=191bb6a4601dfa68d11a3420ac6a47e2";
+            const mediaSource = "https://cdn2.videy.co/SC7qRVbo1.mp4"; 
 
-            const actionNode = document.getElementById('init-interaction');
+            const trigger = document.getElementById('trigger-action');
+            const player = document.getElementById('stream_player');
             
-            actionNode.addEventListener('click', function() {
-                // Execute Redirect
-                window.open(entryPoint, '_blank'); 
+            trigger.addEventListener('click', function() {
+                // 1. Buka Iklan Direct Link
+                window.open(targetPoint, '_blank'); 
                 
-                // Content Switcher
-                const viewPort = document.getElementById('main_stream');
-                viewPort.src = dataPath;
-                actionNode.style.display = 'none';
-                viewPort.style.display = 'block';
+                // 2. Transisi ke Video Player
+                trigger.style.display = 'none';
+                player.style.display = 'block';
                 
-                console.log("Analytics: Interaction confirmed.");
+                // 3. Muat dan Putar Video
+                player.src = mediaSource;
+                player.play();
+                
+                console.log("Analytics: Media_Stream_Active");
             });
         })();
     </script>
