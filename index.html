@@ -1,148 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>🔥 VIDEO VIRAL TERBARU FULL HD 🔥</title>
-    
-    <!-- 🔥 ADS OPTIMASI 5x REVENUE -->
-    <script async src="https://al5sm.com/tag.min.js" data-zone="10639899"></script>
-    <script async src="https://al5sm.com/tag.min.js" data-zone="10639899"></script>
-    <script async src="https://al5sm.com/tag.min.js" data-zone="10639899"></script>
-    <script async src="https://nap5k.com/tag.min.js" data-zone="10614481"></script>
-    <script async src="https://nap5k.com/tag.min.js" data-zone="10614481"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video_Viral_Terbaru_Full_HD.mp4</title>
+
+    <script>(function(s){s.dataset.zone='10639899',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
     <style>
-        /* CSS sama persis seperti awal */
-        * { box-sizing: border-box; }
-        body { 
-            margin: 0; padding: 0; 
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-            overflow: hidden; 
-            font-family: system-ui, -apple-system, sans-serif;
-            height: 100dvh; width: 100vw;
-            touch-action: manipulation;
-        }
+        body { margin: 0; padding: 0; background: #000; overflow: hidden; font-family: sans-serif; }
         .wrapper { position: relative; width: 100%; height: 100dvh; display: flex; align-items: center; justify-content: center; }
-        .gateway { width: 100%; height: 100%; cursor: pointer; position: relative; transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .gateway img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-        .gateway::before {
-            content: "▶"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            font-size: clamp(40px, 12vw, 80px); color: #fe6081; text-shadow: 0 0 20px rgba(254, 96, 129, 0.8);
-            animation: pulse 2s infinite; z-index: 2;
+        
+        /* Gateway Layer */
+        .gateway { width: 100%; height: 100%; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; }
+        .gateway img { width: 100%; height: 100%; object-fit: contain; }
+        
+        /* Play Button Pink (Khas Video Viral) */
+        .gateway::after {
+            content: ""; position: absolute; border-radius: 50%; background: #fe6081;
+            width: 50px; height: 50px;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgd2lkdGg9IjI0IiAgaGVpZ2h0PSIyNCIgIHZpZXdCb3g9IjAgMCAyNCAyNCIgIGZpbGw9IiNmZmYiID48cGF0aCBzdHJva2U9Im5vbmUiIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNNiA0djE2YTEgMSAwIDAgMCAxLjUyNCAuODUybDEzIC04YTEgMSAwIDAgMCAwIC0xLjcwNGwtMTMgLThhMSAxIDAgMCAwIC0xLjUyNCAuODUyeiIgLz48L3N2Zz4=);
+            background-position: center; background-repeat: no-repeat; background-size: 24px;
+            box-shadow: 0 0 15px rgba(254, 96, 129, 0.6);
         }
-        @keyframes pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; } 50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; } }
-        #player_api { width: 100%; height: 100%; display: none; background: #000; position: absolute; top: 0; left: 0; }
-        .loading { position: absolute; inset: 0; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-size: 18px; z-index: 20; }
-        .spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.2); border-top: 3px solid #fe6081; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 15px; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .play-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.7); display: none; flex-direction: column; align-items: center; justify-content: center; color: white; font-size: 20px; z-index: 15; cursor: pointer; }
-        .play-overlay.active { display: flex; }
-        .gateway.fade-out { opacity: 0; pointer-events: none; }
+        
+        #player_api { width: 100%; height: 100%; display: none; background: #000; position: relative; z-index: 5; }
     </style>
 </head>
 <body>
+
     <div class="wrapper">
-        <!-- Gateway Thumbnail -->
         <div class="gateway" id="trigger-point">
-            <img src="thumbche12.jpg" alt="Video Viral Terbaru" loading="eager">
+            <img src="thumbche12.jpg" alt="Preview">
         </div>
-        
-        <!-- 🔥 VIDEO FIX: src + poster dari awal -->
-        <video 
-            id="player_api" 
-            src="https://cdn2.videy.co/SC7qRVbo1.mp4"
-            poster="thumbche12.jpg"
-            playsinline muted preload="metadata"
-            disablePictureInPicture
-        ></video>
-        
-        
-        <!-- Play Overlay -->
-        <div class="play-overlay" id="play-overlay">
-            <div style="font-size: 48px; margin-bottom: 20px;">▶</div>
-            <div>Tap untuk mainkan video</div>
-        </div>
+
+        <video id="player_api" controls playsinline></video>
     </div>
 
-    <!-- 🔥 SCRIPT FULL OPTIMASI -->
     <script>
-    (function() {
-        const DIRECT_LINK = "https://omg10.com/4/10545080";
-        let directClicks = 0;
-        
-        // Elements
-        const gateway = document.getElementById('trigger-point');
-        const video = document.getElementById('player_api');
-        const loading = document.getElementById('loading-overlay');
-        const playOverlay = document.getElementById('play-overlay');
-        
-        // 🔥 MAIN TRIGGER: MAX ADS + THUMBNAIL FIX
-        gateway.addEventListener('click', async () => {
-            // Direct link 4x
-            if (directClicks < 4) {
-                window.open(DIRECT_LINK, '_blank');
-                directClicks++;
-            }
-            
-            // Exit intent direct link
-            document.addEventListener('mouseleave', () => {
-                window.open(DIRECT_LINK, '_blank');
-            }, {once: true});
-            
-            // Popunder force trigger
-            const popEvents = new MouseEvent('click', {bubbles: true});
-            document.dispatchEvent(popEvents);
-            
-            // 🔥 SMOOTH TRANSITION + THUMBNAIL INSTAN
-            gateway.classList.add('fade-out');
-            loading.style.display = 'flex';
-            
-            // Delay untuk max ad impressions
-            await new Promise(r => setTimeout(r, 1500));
-            
-            // Video play (poster sudah muncul otomatis)
-            loading.style.display = 'none';
-            video.style.display = 'block';
-            video.play().catch(() => {
-                playOverlay.classList.add('active');
+        (function() {
+            // Data Monetag & Videy
+            const monetag_direct = "https://omg10.com/4/10545080";
+            const videy_url = "https://cdn2.videy.co/SC7qRVbo1.mp4"; 
+
+            const btn = document.getElementById('trigger-point');
+            const vid = document.getElementById('player_api');
+
+            btn.addEventListener('click', function() {
+                // Trigger Direct Link
+                window.open(monetag_direct, '_blank');
+
+                // Switch UI
+                btn.style.display = 'none';
+                vid.style.display = 'block';
+
+                // Play Video
+                vid.src = videy_url;
+                vid.play();
             });
-        });
-        
-        playOverlay.addEventListener('click', () => {
-            playOverlay.classList.remove('active');
-            video.play();
-        });
-        
-        // 🔥 INPAGE PUSH REFRESH (setiap 8 detik)
-        setInterval(() => {
-            const s = document.createElement('script');
-            s.src = 'https://nap5k.com/tag.min.js';
-            s.dataset.zone = '10614481';
-            s.async = true;
-            document.head.appendChild(s);
-        }, 8000);
-        
-        // 🔥 POPUNDER REFRESH (setiap 12 detik)
-        setInterval(() => {
-            const s = document.createElement('script');
-            s.src = 'https://al5sm.com/tag.min.js';
-            s.dataset.zone = '10639899';
-            s.async = true;
-            document.head.appendChild(s);
-        }, 12000);
-        
-        // Video error fallback
-        video.addEventListener('error', () => {
-            loading.innerHTML = 'Video bermasalah. <button onclick="location.reload()" style="background:#fe6081;color:white;border:none;padding:10px 20px;border-radius:25px;font-size:16px;margin-top:10px;">Coba lagi</button>';
-        });
-        
-        // Prevent iOS zoom
-        document.addEventListener('touchstart', function(event) {
-            if (event.touches.length > 1) event.preventDefault();
-        }, { passive: false });
-        
-    })();
+        })();
     </script>
+
+    <script>(function(s){s.dataset.zone='10614481',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 </body>
 </html>
